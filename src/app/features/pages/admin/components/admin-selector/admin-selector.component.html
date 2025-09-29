@@ -1,0 +1,77 @@
+<aside class="sidebar">
+    <div class="sidebar-header">
+        <h3>
+            TOEIC Mentors
+        </h3>
+    </div>
+    <ul class="sidebar-menu">
+        <li class="sidebar-item" [class.active]="selectedPage === 'trang-chu'" (click)="selectPage('trang-chu')">
+            <span class="sidebar-link">Trang chủ</span>
+            <ul class="dropdown">
+                <li class="dropdown-item" (click)="toggleHeaderDropdown()">
+                    <span class="dropdown-link">Header</span>
+                    <span class="dropdown-arrow" [class.open]="isHeaderOpen">▼</span>
+                    <ul class="sub-dropdown" *ngIf="isHeaderOpen">
+                        <li (click)="selectComponent('trang-chu', 'header', '1')">Header Đơn giản</li>
+                        <li (click)="selectComponent('trang-chu', 'header', '2')">Header Gradient</li>
+                        <li (click)="selectComponent('trang-chu', 'header', '3')">Header Centered</li>
+                    </ul>
+                </li>
+                <li class="dropdown-item" (click)="selectComponent('trang-chu', 'banner', '1')">
+                    <span class="dropdown-link">Banner Centered</span>
+                </li>
+                <li class="dropdown-item" (click)="selectComponent('trang-chu', 'courses', '1')">
+                    <span class="dropdown-link">Courses Grid</span>
+                </li>
+                <li class="dropdown-item" (click)="selectComponent('trang-chu', 'footer', '1')">
+                    <span class="dropdown-link">Footer Đơn giản</span>
+                </li>
+            </ul>
+        </li>
+        <li class="sidebar-item" [class.active]="selectedPage === 'khoa-hoc'" (click)="selectPage('khoa-hoc')">
+            <span class="sidebar-link">Khóa học</span>
+            <ul class="dropdown">
+                <li class="dropdown-item" (click)="selectComponent('khoa-hoc', 'header', '2')">
+                    <span class="dropdown-link">Header Gradient</span>
+                </li>
+                <li class="dropdown-item" (click)="selectComponent('khoa-hoc', 'banner', '2')">
+                    <span class="dropdown-link">Banner Split</span>
+                </li>
+                <li class="dropdown-item" (click)="selectComponent('khoa-hoc', 'courses', '2')">
+                    <span class="dropdown-link">Courses List</span>
+                </li>
+                <li class="dropdown-item" (click)="selectComponent('khoa-hoc', 'footer', '2')">
+                    <span class="dropdown-link">Footer Đầy đủ</span>
+                </li>
+            </ul>
+        </li>
+        <li class="sidebar-item" [class.active]="selectedPage === 'gioi-thieu'" (click)="selectPage('gioi-thieu')">
+            <span class="sidebar-link">Giới thiệu</span>
+            <ul class="dropdown">
+                <li class="dropdown-item" (click)="selectComponent('gioi-thieu', 'header', '3')">
+                    <span class="dropdown-link">Header Centered</span>
+                </li>
+                <li class="dropdown-item" (click)="selectComponent('gioi-thieu', 'banner', '3')">
+                    <span class="dropdown-link">Banner Fullscreen</span>
+                </li>
+                <li class="dropdown-item" (click)="selectComponent('gioi-thieu', 'footer', '3')">
+                    <span class="dropdown-link">Footer Gradient</span>
+                </li>
+            </ul>
+        </li>
+        <li class="sidebar-item" [class.active]="selectedPage === 'khai-giang'" (click)="selectPage('khai-giang')">
+            <span class="sidebar-link">Khai giảng</span>
+            <ul class="dropdown">
+                <li class="dropdown-item" (click)="selectComponent('khai-giang', 'header', '1')">
+                    <span class="dropdown-link">Header Đơn giản</span>
+                </li>
+                <li class="dropdown-item" (click)="selectComponent('khai-giang', 'banner', '1')">
+                    <span class="dropdown-link">Banner Centered</span>
+                </li>
+                <li class="dropdown-item" (click)="selectComponent('khai-giang', 'footer', '1')">
+                    <span class="dropdown-link">Footer Đơn giản</span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</aside>

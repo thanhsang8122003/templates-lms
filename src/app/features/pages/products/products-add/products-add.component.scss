@@ -1,0 +1,350 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f0f2f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: white;
+            padding: 16px 24px;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h2 {
+            color: #52c41a;
+            font-size: 16px;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn {
+            padding: 6px 15px;
+            border: 1px solid #d9d9d9;
+            border-radius: 6px;
+            background: white;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            color: #666;
+            transition: all 0.3s;
+            height: 32px;
+        }
+
+        .btn:hover {
+            border-color: #40a9ff;
+            color: #40a9ff;
+        }
+
+        .btn-success {
+            background: #52c41a;
+            color: white;
+            border-color: #52c41a;
+        }
+
+        .btn-success:hover {
+            background: #73d13d;
+            border-color: #73d13d;
+            color: white;
+        }
+
+        .content {
+            padding: 24px;
+        }
+
+        .product-section {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .image-upload {
+            width: 120px;
+            height: 120px;
+            border: 2px dashed #d9d9d9;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: border-color 0.3s;
+            background: #fafafa;
+            flex-shrink: 0;
+        }
+
+        .image-upload:hover {
+            border-color: #40a9ff;
+        }
+
+        .image-upload svg {
+            width: 24px;
+            height: 24px;
+            color: #bfbfbf;
+            margin-bottom: 4px;
+        }
+
+        .product-name-section {
+            flex: 1;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form-row.three-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            color: #262626;
+            margin-bottom: 8px;
+            font-weight: 400;
+        }
+
+        .required::after {
+            content: '*';
+            color: #ff4d4f;
+            margin-left: 2px;
+        }
+
+        .form-control {
+            padding: 4px 11px;
+            border: 1px solid #d9d9d9;
+            border-radius: 6px;
+            font-size: 14px;
+            height: 32px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #40a9ff;
+            box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+        }
+
+        .form-control::placeholder {
+            color: #bfbfbf;
+        }
+
+        .select-control {
+            position: relative;
+        }
+
+        .select-control::after {
+            content: '';
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 4px solid #bfbfbf;
+            pointer-events: none;
+        }
+
+        .barcode-section {
+            position: relative;
+        }
+
+        .refresh-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            color: #bfbfbf;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .refresh-btn:hover {
+            background-color: #f0f0f0;
+            color: #666;
+        }
+
+        .add-unit-btn {
+            background: #fafafa;
+            color: #595959;
+            border: 1px solid #d9d9d9;
+            padding: 4px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            height: 32px;
+            transition: all 0.3s;
+            width: fit-content;
+        }
+
+        .add-unit-btn:hover {
+            background: #e6f7ff;
+            border-color: #91d5ff;
+            color: #1890ff;
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: #52c41a;
+        }
+
+        .checkbox-item label {
+            margin: 0;
+            cursor: pointer;
+            font-weight: normal;
+            font-size: 14px;
+            color: #262626;
+        }
+
+        .tracking-checkbox {
+            margin-bottom: 20px;
+        }
+
+        .tracking-checkbox .checkbox-item {
+            font-size: 14px;
+        }
+
+        .main-content {
+            display: flex;
+            gap: 24px;
+        }
+
+        .left-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex: 0 0 50%;
+        }
+
+        .right-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex: 0 0 50%;
+        }
+
+        .unit-barcode-row {
+            display: flex;
+            gap: 24px;
+        }
+
+        .unit-section {
+            flex: 0 0 60%;
+            display: flex;
+            align-items: end;
+            gap: 12px;
+        }
+
+        .unit-input {
+            flex: 1;
+        }
+
+        .barcode-section-wrapper {
+            flex: 1;
+        }
+
+        .icon {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+        }
+
+        .icon-save {
+            width: 14px;
+            height: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .left-section,
+            .right-section {
+                flex: 1;
+            }
+            
+            .product-section {
+                flex-direction: column;
+            }
+            
+            .form-row.three-cols {
+                grid-template-columns: 1fr;
+            }
+            
+            .unit-barcode-row {
+                flex-direction: column;
+            }
+            
+            .unit-section {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .header {
+                flex-direction: column;
+                gap: 12px;
+                align-items: stretch;
+            }
+            
+            .header-buttons {
+                justify-content: center;
+            }
+        }

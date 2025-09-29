@@ -4,7 +4,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import firebase from 'firebase/compat/app';
 import { GoogleAuthProvider } from 'firebase/auth';
 import AuthProvider = firebase.auth.AuthProvider;
-import { IUser } from 'src/app/models/user.model';
+import { IUser } from 'src/app/core/models/user.model';
 import { IFirebaseWriteResult } from '../models/firebaseQuery.model';
 import { IHistory } from '../models/History.model';
 import { HttpClient } from '@angular/common/http';

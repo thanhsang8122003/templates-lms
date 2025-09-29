@@ -15,7 +15,6 @@ import {CdkMenuModule} from '@angular/cdk/menu';
     ScrollingModule,
     MatProgressSpinnerModule,
     CdkMenuModule
-
   ],
   exports: [
     MatButtonModule,
