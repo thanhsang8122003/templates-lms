@@ -20,8 +20,6 @@ import { FirebaseService } from './core/service/firebase.service';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { ExportOutline, AppstoreAddOutline } from '@ant-design/icons-angular/icons';
 import { SaveOutline } from '@ant-design/icons-angular/icons';
-import { ProductsModule } from './features/pages/products/products.module';
-import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 registerLocaleData(en);
 
@@ -38,10 +36,8 @@ registerLocaleData(en);
     BrowserAnimationsModule,
     HttpClientModule,
     DynamicModule,
-    ProductsModule,
     NzIconModule.forRoot([ExportOutline, AppstoreAddOutline,SaveOutline]),
     NzPaginationModule,
-    SharedModule,
     CoreModule
   ],
   providers: [FirebaseService, { provide: NZ_I18N, useValue: en_US }],

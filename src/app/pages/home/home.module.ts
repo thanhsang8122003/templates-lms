@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MaterialModule } from '../../../shared/material.module';
-import { NgZorroAntModule } from '../../../shared/ng-zorro-ant.module';
 
 const routes: Routes = [
   {
@@ -22,8 +20,6 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    NgZorroAntModule,
-    MaterialModule,
   ]
 })
 export class HomeModule { }
