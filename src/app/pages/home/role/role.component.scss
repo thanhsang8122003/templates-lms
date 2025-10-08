@@ -1,0 +1,244 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: auto;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--ion-color-hu-background);
+    padding: 40px;
+}
+
+.roles-section {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background: var(--ion-color-hu-white);
+    border-radius: 20px;
+    border: 1px solid var(--ion-color-hu-brown);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.roles-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.roles-sidebar {
+    flex: 0 0 280px;
+}
+
+.roles-sidebar h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--ion-color-hu-black);
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.roles-sidebar p {
+    font-size: 16px;
+    color: var(--ion-color-hu-black);
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.explore-btn {
+    background-color: var(--ion-color-hu-orange);
+    color: var(--ion-color-hu-white);
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 250px;
+    margin-top: 20px;
+}
+
+.explore-btn:hover {
+    background-color: var(--ion-color-hu-orange);
+}
+
+.roles-main {
+    flex: 1;
+}
+
+.filter-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.filter-tab {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #d1d1d1;
+    border-radius: 20px;
+    background: var(--ion-color-hu-white);
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.filter-tab.active {
+    background-color: var(--ion-color-hu-black);
+    color: var(--ion-color-hu-white);
+    border-color: var(--ion-color-hu-black);
+}
+
+.filter-tab.active:hover {
+    background-color: var(--ion-color-hu-orange);
+}
+
+.filter-tab:hover:not(.active) {
+    border-color: var(--ion-color-hu-orange);
+    color: var(--ion-color-hu-orange);
+}
+
+.filter-tab.dropdown::after {
+    content: ' ▼';
+    font-size: 10px;
+    margin-left: 4px;
+}
+
+.role-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.role-card {
+    background: var(--ion-color-hu-white);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.role-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transform: translateY(-10px);
+}
+
+.role-image {
+    position: relative;
+    height: 250px;
+    background-color: #fff;
+    display: inline-block;
+    padding: 8px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.role-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #fff;
+}
+
+.role-content {
+    padding: 24px;
+}
+
+.role-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ion-color-hu-black);
+    margin-bottom: 12px;
+}
+
+.role-description {
+    font-size: 14px;
+    color: var(--ion-color-hu-black);
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.role-skills {
+    margin-bottom: 16px;
+}
+
+.role-skills-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ion-color-hu-black);
+    margin-bottom: 8px;
+}
+
+.role-skills-text {
+    font-size: 13px;
+    color: var(--ion-color-hu-black);
+    line-height: 1.5;
+}
+
+.role-certifications {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 16px;
+}
+
+.certifications-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ion-color-hu-black);
+    margin-bottom: 12px;
+}
+
+.certification-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: var(--ion-color-hu-orange);
+    text-decoration: none;
+}
+
+.certification-item:hover {
+    text-decoration: underline;
+}
+
+.certification-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background: var(--ion-color-hu-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.more-certifications {
+    font-size: 13px;
+    color: var(--ion-color-hu-orange);
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.more-certifications:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 968px) {
+    .roles-container {
+        flex-direction: column;
+    }
+
+    .roles-sidebar {
+        flex: 1;
+    }
+
+    .role-cards {
+        grid-template-columns: 1fr;
+    }
+}

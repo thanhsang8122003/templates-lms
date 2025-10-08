@@ -21,11 +21,16 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { ExportOutline, AppstoreAddOutline } from '@ant-design/icons-angular/icons';
 import { SaveOutline } from '@ant-design/icons-angular/icons';
 import { CoreModule } from './core/core.module';
+import { FooterComponent } from './component/footer/footer.component';
+import { HeaderComponent } from './component/header/header.component';
+
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,7 @@ registerLocaleData(en);
     DynamicModule,
     NzIconModule.forRoot([ExportOutline, AppstoreAddOutline,SaveOutline]),
     NzPaginationModule,
-    CoreModule
+    CoreModule,
   ],
   providers: [FirebaseService, { provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

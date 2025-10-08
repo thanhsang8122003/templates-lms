@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--ion-color-hu-background);
+    padding: 20px;
+}
+
+.hero-banner {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--ion-color-hu-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 80px;
+    gap: 60px;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 550px;
+}
+
+.hero-text h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--ion-color-hu-black);
+    margin-bottom: 24px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: var(--ion-color-hu-black);
+    margin-bottom: 32px;
+    line-height: 1.5;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--ion-color-hu-orange);
+    color: var(--ion-color-hu-white);
+    border-color: var(--ion-color-hu-orange);
+}
+
+.btn-primary:hover {
+    background-color: var(--ion-color-hu-white);
+    border-color: var(--ion-color-hu-orange);
+    color: var(--ion-color-hu-orange);
+}
+
+.btn-secondary {
+    background-color: var(--ion-color-hu-white);
+    color: var(--ion-color-hu-orange);
+    border-color: var(--ion-color-hu-orange);
+}
+
+.btn-secondary:hover {
+    background-color: var(--ion-color-hu-orange);
+    color: var(--ion-color-hu-white);
+}
+
+.hero-image {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 350px;
+    height: 350px;
+}
+
+.student-photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 40px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        justify-content: flex-start;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        min-height: 50px;
+        min-width: 200px;
+    }
+
+    .hero-image {
+        display: none;
+    }
+
+
+}

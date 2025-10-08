@@ -1,0 +1,85 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: auto;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--ion-color-hu-background);
+    padding: 40px;
+}
+
+.goals-section {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background: var(--ion-color-hu-white);
+    border-radius: 20px;
+    border: 1px solid var(--ion-color-hu-brown);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.goals-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.goals-container h5 {
+    color: var(--ion-color-hu-black);
+    width: 220px;
+}
+
+.goals-items {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.goal-item {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: var(--ion-color-hu-white);
+    border: 1px solid var(--ion-color-hu-brown);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.goal-item:hover {
+    border-color: var(--ion-color-hu-orange);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.goal-icon {
+    width: 48px;
+    height: 48px;
+    background-color: var(--ion-color-hu-orange);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.goal-icon svg {
+    width: 24px;
+    height: 24px;
+    color: var(--ion-color-hu-white);
+}
+
+.goal-item h6 {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ion-color-hu-black);
+    line-height: 1.4;
+}
+
