@@ -1,0 +1,279 @@
+.certificates-section {
+    padding: 60px 80px;
+    background-color: #f8f9fa;
+    position: relative;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.filter-btn {
+    padding: 10px 24px;
+    border: 2px solid #d1d5db;
+    background-color: white;
+    border-radius: 24px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: #0066cc;
+    color: #0066cc;
+}
+
+.filter-btn.active {
+    background-color: #4a5568;
+    color: white;
+    border-color: #4a5568;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.certificate-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.certificate-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    padding: 20px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.provider-logo {
+    height: 32px;
+    width: auto;
+}
+
+.card-body {
+    padding: 20px;
+    flex: 1;
+}
+
+.certificate-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 16px 0;
+    line-height: 1.4;
+    min-height: 50px;
+}
+
+.skills-section {
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+.skills-section strong {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.skills-text {
+    color: #6b7280;
+}
+
+.rating-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 600;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+.star-icon {
+    width: 16px;
+    height: 16px;
+    color: #fbbf24;
+}
+
+.reviews {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.meta-info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 12px;
+}
+
+.level-badge {
+    padding: 4px 10px;
+    background-color: #e5e7eb;
+    border-radius: 4px;
+    font-weight: 500;
+    color: #374151;
+    font-size: 12px;
+}
+
+.separator {
+    color: #d1d5db;
+}
+
+.duration,
+.credit {
+    color: #6b7280;
+}
+
+.course-progress {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.card-footer {
+    padding: 20px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    gap: 12px;
+}
+
+.btn-primary,
+.btn-secondary {
+    flex: 1;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #0066cc;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0052a3;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #0066cc;
+    border: 2px solid #0066cc;
+}
+
+.btn-secondary:hover {
+    background-color: #f0f7ff;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.nav-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid #d1d5db;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover:not(:disabled) {
+    border-color: #0066cc;
+    background-color: #f0f7ff;
+}
+
+.nav-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.nav-btn svg {
+    width: 20px;
+    height: 20px;
+    color: #374151;
+}
+
+@media (max-width: 1024px) {
+    .certificates-section {
+    padding: 40px 40px;
+    }
+
+    .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    }
+
+    .certificates-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .certificates-section {
+    padding: 30px 20px;
+    }
+
+    .section-title {
+    font-size: 24px;
+    }
+
+    .certificates-grid {
+    grid-template-columns: 1fr;
+    }
+
+    .card-footer {
+    flex-direction: column;
+    }
+}

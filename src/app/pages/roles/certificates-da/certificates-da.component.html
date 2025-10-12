@@ -1,0 +1,71 @@
+<section class="certificates-section">
+      <div class="section-header">
+        <h2 class="section-title">Chứng chỉ được đề xuất</h2>
+        <div class="filter-buttons">
+          <button 
+            *ngFor="let level of levels" 
+            class="filter-btn"
+            [class.active]="selectedLevel === level"
+            (click)="selectLevel(level)">
+            {{ level }}
+          </button>
+        </div>
+      </div>
+
+      <div class="certificates-grid">
+        <div *ngFor="let cert of filteredCertificates" class="certificate-card">
+          <div class="card-header">
+            <img [src]="cert.providerLogo" [alt]="cert.provider" class="provider-logo" />
+          </div>
+
+          <div class="card-body">
+            <h3 class="certificate-title">{{ cert.title }}</h3>
+
+            <div class="skills-section">
+              <strong>Kỹ năng bạn sẽ đạt được:</strong>
+              <span class="skills-text">{{ cert.skills.join(', ') }}</span>
+            </div>
+
+            <div class="rating-section">
+              <span class="rating">
+                <svg class="star-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                {{ cert.rating }}
+              </span>
+              <span class="reviews">({{ cert.totalReviews.toLocaleString() }} đánh giá)</span>
+            </div>
+
+            <div class="meta-info">
+              <span class="level-badge">{{ cert.level }}</span>
+              <span class="separator">·</span>
+              <span class="duration">{{ cert.duration }}</span>
+              <span class="separator">·</span>
+              <span class="credit">Nhận tín chỉ bằng cấp</span>
+            </div>
+
+            <div class="course-progress">
+              <span class="course-info">Khóa học {{ cert.courseNumber }} của {{ cert.totalCourses }}</span>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <button class="btn-primary">Đăng ký miễn phí</button>
+            <button class="btn-secondary">Xem chi tiết</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="navigation-buttons" *ngIf="certificates.length > 4">
+        <button class="nav-btn prev" (click)="scrollPrev()" [disabled]="scrollPosition === 0">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button class="nav-btn next" (click)="scrollNext()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </section>

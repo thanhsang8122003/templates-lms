@@ -1,0 +1,159 @@
+.role-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 80px;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-content {
+    flex: 1;
+    max-width: 600px;
+    z-index: 2;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: #0066cc;
+}
+
+.breadcrumb-home {
+    display: flex;
+    align-items: center;
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumb-home:hover {
+    color: #0052a3;
+}
+
+.breadcrumb-separator {
+    color: #666;
+}
+
+.breadcrumb-text {
+    color: #0066cc;
+}
+
+.banner-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+}
+
+.banner-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin: 0 0 16px 0;
+}
+
+.banner-details {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+    margin: 0 0 20px 0;
+}
+
+.banner-skills {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.banner-skills strong {
+    font-weight: 600;
+}
+
+.banner-image {
+    position: relative;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.image-background {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(135deg, #ffa500 0%, #ffb732 100%);
+    border-radius: 50% 50% 0 50%;
+    transform: rotate(-15deg);
+    right: 60px;
+
+    z-index: 1;
+}
+
+.person-image {
+    position: relative;
+    width: 700px;
+    height: auto;
+    z-index: 2;
+    display: block;
+    background-color: #ffffff;
+    top: -20px;
+}
+
+@media (max-width: 1024px) {
+    .role-banner {
+    flex-direction: column;
+    padding: 40px 40px;
+    text-align: center;
+    }
+
+    .banner-content {
+    max-width: 100%;
+    margin-bottom: 40px;
+    }
+
+    .breadcrumb {
+    justify-content: center;
+    }
+
+    .banner-title {
+    font-size: 36px;
+    }
+
+    .image-background {
+    right: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(-15deg);
+    }
+
+    .person-image {
+    width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .role-banner {
+    padding: 30px 20px;
+    }
+
+    .banner-title {
+    font-size: 28px;
+    }
+
+    .banner-description,
+    .banner-details {
+    font-size: 14px;
+    }
+
+    .person-image {
+    width: 250px;
+    }
+
+    .image-background {
+    width: 250px;
+    height: 250px;
+    }
+}

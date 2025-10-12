@@ -1,0 +1,243 @@
+.similar-roles-section {
+    padding: 60px 80px;
+    background-color: #f8f9fa;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.view-all-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: gap 0.3s ease;
+}
+
+.view-all-link:hover {
+    gap: 10px;
+}
+
+.view-all-link svg {
+    width: 16px;
+    height: 16px;
+}
+
+.roles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.role-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.role-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-image-section {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.image-background {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50% 50% 0 50%;
+    transform: rotate(-20deg);
+    top: -30px;
+    left: -20px;
+    z-index: 1;
+}
+
+.icon-container {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%) rotate(20deg);
+    z-index: 2;
+}
+
+.role-icon {
+    width: 40px;
+    height: 40px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.role-image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    z-index: 3;
+}
+
+.card-content {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.role-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+}
+
+.role-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4b5563;
+    margin: 0 0 16px 0;
+}
+
+.responsibilities-section {
+    margin-bottom: 20px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.responsibilities-section strong {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+.responsibilities-text {
+    color: #6b7280;
+}
+
+.certifications-section {
+    margin-top: auto;
+}
+
+.certifications-section > strong {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+.certifications-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 8px 0;
+}
+
+.certifications-list.additional {
+    margin-top: 8px;
+}
+
+.certification-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    font-size: 13px;
+    color: #0066cc;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.certification-item:hover {
+    background-color: #f8f9fa;
+}
+
+.cert-logo {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.cert-provider {
+    font-size: 12px;
+    color: #6b7280;
+    flex-shrink: 0;
+}
+
+.cert-name {
+    color: #0066cc;
+    flex: 1;
+}
+
+.show-more-btn {
+    background: none;
+    border: none;
+    color: #0066cc;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 4px 0;
+    transition: color 0.2s;
+}
+
+.show-more-btn:hover {
+    color: #0052a3;
+    text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+    .similar-roles-section {
+    padding: 40px 40px;
+    }
+
+    .roles-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .similar-roles-section {
+    padding: 30px 20px;
+    }
+
+    .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    }
+
+    .section-title {
+    font-size: 24px;
+    }
+
+    .roles-grid {
+    grid-template-columns: 1fr;
+    }
+}

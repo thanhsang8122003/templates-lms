@@ -1,0 +1,91 @@
+<section class="similar-roles-section">
+    <div class="section-header">
+    <h2 class="section-title">{{ sectionTitle }}</h2>
+    <a [href]="viewAllLink" class="view-all-link">
+        {{ viewAllText }}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+    </a>
+    </div>
+
+    <div class="roles-grid">
+    <div *ngFor="let role of roles" class="role-card">
+        <div class="card-image-section">
+        <div class="image-background" [style.background-color]="role.backgroundColor">
+            <div class="icon-container">
+            <svg *ngIf="role.iconType === 'lightning'" class="role-icon" viewBox="0 0 24 24" fill="white">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <svg *ngIf="role.iconType === 'chart'" class="role-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <line x1="12" y1="20" x2="12" y2="10"></line>
+                <line x1="18" y1="20" x2="18" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="16"></line>
+            </svg>
+            <svg *ngIf="role.iconType === 'pie'" class="role-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+            </svg>
+            <svg *ngIf="role.iconType === 'network'" class="role-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <circle cx="12" cy="12" r="3"></circle>
+                <circle cx="6" cy="6" r="2"></circle>
+                <circle cx="18" cy="6" r="2"></circle>
+                <circle cx="6" cy="18" r="2"></circle>
+                <circle cx="18" cy="18" r="2"></circle>
+                <line x1="12" y1="9" x2="12" y2="6"></line>
+                <line x1="15" y1="12" x2="18" y2="12"></line>
+                <line x1="9" y1="12" x2="6" y2="12"></line>
+                <line x1="10.5" y1="13.5" x2="7.5" y2="16.5"></line>
+                <line x1="13.5" y1="13.5" x2="16.5" y2="16.5"></line>
+            </svg>
+            <svg *ngIf="role.iconType === 'code'" class="role-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+            <svg *ngIf="role.iconType === 'database'" class="role-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+            </svg>
+            </div>
+        </div>
+        <img [src]="role.imageUrl" [alt]="role.title" class="role-image" />
+        </div>
+
+        <div class="card-content">
+        <h3 class="role-title">{{ role.title }}</h3>
+        <p class="role-description">{{ role.description }}</p>
+        
+        <div class="responsibilities-section">
+            <strong>Nếu bạn thích:</strong>
+            <span class="responsibilities-text">{{ role.responsibilities }}</span>
+        </div>
+
+        <div class="certifications-section">
+            <strong>Định danh</strong>
+            <ul class="certifications-list">
+            <li *ngFor="let cert of role.certifications.slice(0, 2)" class="certification-item">
+                <img *ngIf="cert.logo" [src]="cert.logo" [alt]="cert.provider" class="cert-logo" />
+                <span class="cert-provider" *ngIf="!cert.logo">{{ cert.provider }}</span>
+                <span class="cert-name">{{ cert.name }}</span>
+            </li>
+            </ul>
+            <button 
+            *ngIf="role.certifications.length > 2" 
+            class="show-more-btn"
+            (click)="toggleCertifications(role.id)">
+            {{ expandedRoles.has(role.id) ? '- thu gọn' : '+ thêm ' + (role.certifications.length - 2) }}
+            </button>
+
+            <ul *ngIf="expandedRoles.has(role.id)" class="certifications-list additional">
+            <li *ngFor="let cert of role.certifications.slice(2)" class="certification-item">
+                <img *ngIf="cert.logo" [src]="cert.logo" [alt]="cert.provider" class="cert-logo" />
+                <span class="cert-provider" *ngIf="!cert.logo">{{ cert.provider }}</span>
+                <span class="cert-name">{{ cert.name }}</span>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    </div>
+</section>

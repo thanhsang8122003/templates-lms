@@ -1,0 +1,27 @@
+<div class="role-banner">
+    <div class="banner-content">
+    <div class="breadcrumb">
+        <a href="/" class="breadcrumb-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        </svg>
+        </a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-text">{{ breadcrumb }}</span>
+    </div>
+
+    <h1 class="banner-title">{{ title }}</h1>
+    
+    <strong class="banner-description">{{ description }}</strong>
+    
+    <p class="banner-details" *ngIf="details">{{ details }}</p>
+    
+    <div class="banner-skills" *ngIf="skills">
+        <strong>{{ skillsLabel }}:</strong> {{ skills }}
+    </div>
+    </div>
+
+    <div class="banner-image">
+    <img [src]="imageUrl" [alt]="imageAlt" class="person-image" />
+    </div>
+</div>
