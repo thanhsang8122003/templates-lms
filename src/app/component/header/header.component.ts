@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+<<<<<<< HEAD
 interface DropdownSection {
   title: string
   links: string[]
@@ -9,12 +10,15 @@ interface DropdownColumn {
   sections: DropdownSection[]
 }
 
+=======
+>>>>>>> 32b6172ec043f10a816d8788462145db4cab4675
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+<<<<<<< HEAD
   showDropdown = false
 
   dropdownColumns: DropdownColumn[] = [
@@ -91,4 +95,7 @@ export class HeaderComponent {
   onMouseLeave(): void {
     this.showDropdown = false
   }
+=======
+
+>>>>>>> 32b6172ec043f10a816d8788462145db4cab4675
 }

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Section</title>
+    <link rel="stylesheet" href="./about.component.scss">
+</head>
+<body>
+    <!-- Blog Section -->
+    <section class="blog">
+        <!-- Hero Section -->
+        <div class="blog__hero">
+            <div class="container">
+                <div class="blog__hero-content">
+                    <h1 class="blog__hero-title">MemNews</h1>
+                    <p class="blog__hero-desc">
+                        Articles to brighten your language learning journey. Read learning guides for different languages, Memrise learning methods, language learning news, motivational tips and more. Put together by Memrise's language specialists.
+                    </p>
+                </div>
+
+                <div class="blog__hero-featured">
+                    <div class="featured-card">
+                        <div class="featured-card__image">
+                            <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=800&q=80" alt="New Year's Resolutions">
+                            <div class="featured-card__tags">
+                                <span class="tag">Language Learning</span>
+                                <span class="tag">Featured</span>
+                            </div>
+                        </div>
+                        <div class="featured-card__content">
+                            <h3>Your 2025 New Year's Resolutions: how to learn a new language this year</h3>
+                            <p>Achieve your New Year's resolutions in 2025! We tell you how to work on your new year goal so you get to speak naturally and confidently, . . .</p>
+                            <span class="featured-card__date">16/12/2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave Divider -->
+        <div class="wave-divider"></div>
+
+        <!-- All Blogs Section -->
+        <div class="blog__all">
+            <div class="container">
+                <div class="blog__header">
+                    <h2 class="blog__title">All The Blogs:</h2>
+                    <p class="blog__subtitle">
+                        Discover mind-blowing language learning tips, stories from the world of languages, and more key advice to help you learn fast. And have fun while you're doing it.
+                    </p>
+                </div>
+
+                <!-- Filters -->
+                <div class="blog__filters">
+                    <div class="filter-group">
+                        <label>Category:</label>
+                        <select class="filter-select">
+                            <option>All</option>
+                            <option>Language Learning</option>
+                            <option>News & Events</option>
+                            <option>Tips & Tricks</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Date:</label>
+                        <select class="filter-select">
+                            <option>All</option>
+                            <option>2025</option>
+                            <option>2024</option>
+                            <option>2023</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Blog Grid -->
+                <div class="blog__grid">
+                    <!-- Blog Card 1 -->
+                    <article class="blog-card">
+                        <div class="blog-card__image">
+                            <img src="https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?w=600&q=80" alt="Team Update">
+                            <span class="blog-card__category">Memrise News & Events</span>
+                        </div>
+                        <div class="blog-card__content">
+                            <h3>Team Update: A Full Look at the New Experience</h3>
+                            <p>Over the last couple of months, we've been pulling back the curtain on what...</p>
+                            <span class="blog-card__date">31/07/2025</span>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 2 -->
+                    <article class="blog-card blog-card--dark">
+                        <div class="blog-card__image">
+                            <div class="blog-card__service-status">
+                                <h3>Service Status<br>Update 🔧</h3>
+                            </div>
+                        </div>
+                        <div class="blog-card__content">
+                            <h3>Memrise Service Update</h3>
+                            <p>A service status update from Memrise: current outage.</p>
+                            <span class="blog-card__date">24/07/2025</span>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 3 -->
+                    <article class="blog-card">
+                        <div class="blog-card__image">
+                            <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?w=600&q=80" alt="My Lessons">
+                            <span class="blog-card__category">Memrise News & Events</span>
+                        </div>
+                        <div class="blog-card__content">
+                            <h3>Coming Soon: My Lessons</h3>
+                            <p>"Once I've picked a Wordlist... what happens next?" In this team update, Marcin...</p>
+                            <span class="blog-card__date">27/06/2025</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
