@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
+import { Auth, signInWithPopup, GoogleAuthProvider, signOut } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import firebase from 'firebase/compat/app';
-import { GoogleAuthProvider } from 'firebase/auth';
+// import { GoogleAuthProvider } from 'firebase/auth';
 import AuthProvider = firebase.auth.AuthProvider;
 import { IUser } from 'src/app/core/models/user.model';
 import { IFirebaseWriteResult } from '../models/firebaseQuery.model';
@@ -42,3 +43,44 @@ export class FirebaseService {
     private router: Router,
   ) { }
 }
+export class AuthService {
+    constructor(private auth: Auth) {}
+    
+    async loginWithGoogle() {
+        const provider = new GoogleAuthProvider();
+        try {
+        const result = await signInWithPopup(this.auth, provider);
+        return result.user;
+        } catch (error) {
+        console.error('Login error:', error);
+        throw error;
+        }
+    }
+
+    async logout() {
+        await signOut(this.auth);
+    }
+}
+
+// import { Injectable } from '@angular/core';
+// import { Auth, signInWithPopup, GoogleAuthProvider, signOut } from '@angular/fire/auth';
+
+// @Injectable({ providedIn: 'root' })
+// export class AuthService {
+//     constructor(private auth: Auth) {}
+    
+//     async loginWithGoogle() {
+//         const provider = new GoogleAuthProvider();
+//         try {
+//         const result = await signInWithPopup(this.auth, provider);
+//         return result.user;
+//         } catch (error) {
+//         console.error('Login error:', error);
+//         throw error;
+//         }
+//     }
+
+//     async logout() {
+//         await signOut(this.auth);
+//     }
+// }

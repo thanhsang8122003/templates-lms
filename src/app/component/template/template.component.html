@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chọn Giao Diện</title>
+    <link rel="stylesheet" href="./template.component.scss">
+</head>
+<body>
+    <div class="container">
+        <div class="selection-wrapper">
+            <h1 class="title">Chọn Giao Diện Của Bạn</h1>
+            <p class="subtitle">Lựa chọn một trong các giao diện được thiết kế sẵn dưới đây</p>
+            
+            <div class="ui-grid">
+                <!-- UI Option 1 -->
+                <div class="ui-card">
+                    <div class="ui-preview">
+                        <div class="preview-content preview-1">
+                            <div class="preview-header"></div>
+                            <div class="preview-body">
+                                <div class="preview-box"></div>
+                                <div class="preview-box"></div>
+                                <div class="preview-box"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-info">
+                        <h3 class="ui-name">Giao Diện Classic</h3>
+                        <p class="ui-description">Thiết kế truyền thống, dễ sử dụng với bố cục rõ ràng</p>
+                        <button class="btn-select" data-ui="classic" onclick="window.location.href='/home1'">
+                            <span class="btn-text">Chọn Giao Diện</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- UI Option 2 -->
+                <div class="ui-card">
+                    <div class="ui-preview">
+                        <div class="preview-content preview-2">
+                            <div class="preview-sidebar"></div>
+                            <div class="preview-main">
+                                <div class="preview-box"></div>
+                                <div class="preview-box"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-info">
+                        <h3 class="ui-name">Giao Diện Modern</h3>
+                        <p class="ui-description">Hiện đại với thanh điều hướng bên cạnh, tối ưu cho màn hình lớn</p>
+                        <button class="btn-select" data-ui="modern">
+                            <span class="btn-text">Chọn Giao Diện</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- UI Option 3 -->
+                <div class="ui-card">
+                    <div class="ui-preview">
+                        <div class="preview-content preview-3">
+                            <div class="preview-grid">
+                                <div class="preview-box"></div>
+                                <div class="preview-box"></div>
+                                <div class="preview-box"></div>
+                                <div class="preview-box"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-info">
+                        <h3 class="ui-name">Giao Diện Grid</h3>
+                        <p class="ui-description">Bố cục lưới linh hoạt, phù hợp hiển thị nhiều nội dung</p>
+                        <button class="btn-select" data-ui="grid">
+                            <span class="btn-text">Chọn Giao Diện</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- UI Option 4 -->
+                <div class="ui-card">
+                    <div class="ui-preview">
+                        <div class="preview-content preview-4">
+                            <div class="preview-hero"></div>
+                            <div class="preview-cards">
+                                <div class="preview-box"></div>
+                                <div class="preview-box"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-info">
+                        <h3 class="ui-name">Giao Diện Minimal</h3>
+                        <p class="ui-description">Tối giản, tập trung vào nội dung chính</p>
+                        <button class="btn-select" data-ui="minimal">
+                            <span class="btn-text">Chọn Giao Diện</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="selected-info" id="selectedInfo" style="display: none;">
+                <div class="info-content">
+                    <span class="info-icon">✓</span>
+                    <span class="info-text">Bạn đã chọn: <strong id="selectedUI"></strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.btn-select').forEach(button => {
+            button.addEventListener('click', function() {
+                const uiType = this.getAttribute('data-ui');
+                const uiName = this.closest('.ui-card').querySelector('.ui-name').textContent;
+                
+                // Remove active class from all cards
+                document.querySelectorAll('.ui-card').forEach(card => {
+                    card.classList.remove('active');
+                });
+                
+                // Add active class to selected card
+                this.closest('.ui-card').classList.add('active');
+                
+                // Show selected info
+                const selectedInfo = document.getElementById('selectedInfo');
+                const selectedUI = document.getElementById('selectedUI');
+                selectedUI.textContent = uiName;
+                selectedInfo.style.display = 'block';
+                
+                // Smooth scroll to show the selection
+                selectedInfo.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                
+                console.log('Selected UI:', uiType);
+            });
+        });
+    </script>
+</body>
+</html>

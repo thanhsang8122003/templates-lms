@@ -1,0 +1,121 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./login.component.scss">
+</head>
+<body>
+    <div class="login-container">
+    <button (click)="loginWithGoogle()" *ngIf="!userData">Đăng nhập bằng Google</button>
+
+    <div *ngIf="userData" class="user-info">
+        <img [src]="userData.photoURL" alt="User photo" width="80" height="80" style="border-radius:50%">
+        <h3>{{ userData.displayName }}</h3>
+        <p>{{ userData.email }}</p>
+        <button (click)="logout()">Đăng xuất</button>
+    </div>
+</div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="./login.component.scss">
+</head>
+<body>
+    <div class="login-container">
+        <div *ngIf="userData" class="user-info">
+        <img [src]="userData.photoURL" alt="User photo" width="80" height="80" style="border-radius:50%">
+        <h3>{{ userData.displayName }}</h3>
+        <p>{{ userData.email }}</p>
+        <button (click)="logout()">Đăng xuất</button>
+    </div>
+        <div class="logo">
+            <div class="logo-icon">🎓</div>
+            <h1>Chào mừng trở lại</h1>
+            <p>Đăng nhập để tiếp tục học tập</p>
+        </div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <div class="input-wrapper">
+                    <span class="input-icon">📧</span>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        class="form-control" 
+                        placeholder="example@email.com"
+                        required
+                    >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <div class="input-wrapper">
+                    <span class="input-icon">🔒</span>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        class="form-control" 
+                        placeholder="Nhập mật khẩu"
+                        required
+                    >
+                </div>
+            </div>
+
+            <div class="checkbox-wrapper">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Ghi nhớ đăng nhập</label>
+            </div>
+
+            <div class="forgot-password">
+                <a href="#forgot">Quên mật khẩu?</a>
+            </div>
+
+            <button type="submit" class="btn btn-info">
+                <span>Đăng Nhập</span>
+                <span>→</span>
+            </button>
+        </form>
+
+        <div class="divider">
+            <span>Hoặc đăng nhập bằng</span>
+        </div>
+
+        <button type="button" class="btn btn-google" id="googleLogin" (click)="loginWithGoogle()" *ngIf="!userData">
+
+    
+            
+            <span>Đăng nhập với Google</span>
+            
+        </button>
+        
+        <div class="signup-link">
+            Chưa có tài khoản? <a href="#signup">Đăng ký ngay</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            console.log('Login attempt:', { email, password });
+            alert('Đăng nhập thành công! (Demo)');
+        });
+
+        document.getElementById('googleLogin').addEventListener('click', function() {
+            console.log('Google login clicked');
+            alert('Đăng nhập với Google! (Demo)');
+        });
+    </script>
+</body>
+</html>

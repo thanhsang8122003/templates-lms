@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BannerComponent } from './banner/banner.component';
+import { AsideComponent } from './aside/aside.component';
+import { ArticleComponent } from './article/article.component';
+
 
 const routes: Routes = [
   {
@@ -13,13 +17,16 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    BannerComponent,
+    AsideComponent,
+    ArticleComponent,
   ],
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ]
 })
 export class HomeModule { }

@@ -1,0 +1,190 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--ion-color-hu-background);
+}
+
+// Container
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+// Footer
+.footer {
+    background-color: var(--ion-color-hu-header);
+    padding: 60px 20px 40px;
+    color: var(--ion-color-hu-white);
+
+    &__top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        margin-bottom: 40px;
+    }
+
+    &__logo {
+        .logo-text {
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--ion-color-hu-orange);
+            line-height: 1.1;
+            letter-spacing: -1px;
+            display: block;
+            text-align: center;
+        }
+    }
+
+    &__social {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        margin: 32px 0;
+
+        .social-link {
+            width: 48px;
+            height: 48px;
+            border: 2px solid var(--ion-color-hu-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ion-color-hu-white);
+            transition: all 0.3s ease;
+            text-decoration: none;
+
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            &:hover {
+                background-color: var(--ion-color-hu-white);
+                color: var(--ion-color-footer-bg);
+                transform: translateY(-3px);
+            }
+        }
+    }
+
+    &__links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding-top: 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    &__column {
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        li {
+            a {
+                color: var(--ion-color-hu-white);
+                text-decoration: none;
+                font-size: 15px;
+                font-weight: 400;
+                transition: all 0.3s ease;
+                display: inline-block;
+
+                &:hover {
+                    color: var(--ion-color-hu-orange);
+                    transform: translateX(4px);
+                }
+            }
+        }
+    }
+}
+
+// Button
+.btn {
+    padding: 14px 40px;
+    border-radius: 24px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+
+    &--cta {
+        background-color: var(--ion-color-hu-orange);
+        color: var(--ion-color-hu-white);
+        box-shadow: 0 4px 12px rgba(20, 109, 175, 0.3);
+
+        &:hover {
+            background-color: var(--ion-color-hu-green);
+            box-shadow: 0 6px 16px rgba(105, 185, 63, 0.4);
+            transform: translateY(-2px);
+        }
+    }
+}
+
+// Responsive
+@media (max-width: 992px) {
+    .footer {
+        &__links {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 48px 20px 32px;
+
+        &__top {
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        &__logo {
+            .logo-text {
+                font-size: 28px;
+            }
+        }
+
+        &__social {
+            margin: 24px 0;
+            gap: 12px;
+
+            .social-link {
+                width: 44px;
+                height: 44px;
+
+                svg {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+        }
+
+        &__links {
+            grid-template-columns: 1fr;
+            gap: 24px;
+            padding-top: 32px;
+        }
+
+        &__column {
+            text-align: center;
+
+            ul {
+                align-items: center;
+            }
+        }
+    }
+
+    .btn--cta {
+        padding: 12px 32px;
+        font-size: 15px;
+    }
+}
