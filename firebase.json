@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "hosting": {
     "site": "study-toeicmentors",
@@ -15,3 +16,22 @@
     ]
   }
 }
+=======
+{
+  "hosting": {
+    "site": "study-toeicmentors",
+    "public": "dist/toeic-customers",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
+>>>>>>> 0d871b7a71a9f8d36d9181efe99cb49a74755881
