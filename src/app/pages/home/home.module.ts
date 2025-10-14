@@ -32,5 +32,9 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
   ]
+  ,
+  exports: [
+    GoalComponent
+  ]
 })
 export class HomeModule { }

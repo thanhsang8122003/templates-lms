@@ -12,7 +12,7 @@
     <div class="roles-grid">
     <div *ngFor="let role of roles" class="role-card">
         <div class="card-image-section">
-        <div class="image-background" [style.background-color]="role.backgroundColor">
+        <!-- <div class="image-background" [style.background-color]="role.backgroundColor">
             <div class="icon-container">
             <svg *ngIf="role.iconType === 'lightning'" class="role-icon" viewBox="0 0 24 24" fill="white">
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
@@ -48,7 +48,7 @@
                 <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
             </svg>
             </div>
-        </div>
+        </div> -->
         <img [src]="role.imageUrl" [alt]="role.title" class="role-image" />
         </div>
 

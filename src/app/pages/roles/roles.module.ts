@@ -19,12 +19,12 @@ const routes: Routes = [
     RolesComponent,
     BannerDAComponent,
     CertificatesDAComponent,
-    GoalComponent,
-    SimilarRoleDAComponent
+    SimilarRoleDAComponent,
+    GoalComponent
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
   ]
 })
 export class RolesModule { }
