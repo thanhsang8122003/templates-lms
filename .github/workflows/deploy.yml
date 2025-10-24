@@ -1,19 +1,23 @@
-name: Deploy Angular Template to GitHub Pages
+name: Auto Deploy Angular Templates to GitHub Pages
 
 on:
   push:
-    branches:
-      - sang-lms
-      - template2
-      - template3
+    branches-ignore:
+      - gh-pages
+      - main
+
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout specific branch
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -23,11 +27,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Angular app
+      - name: Build Angular app for this branch
         run: |
-          BRANCH_NAME=${GITHUB_REF##*/}
-          echo "Building for branch: $BRANCH_NAME"
-          npm run build -- --output-path=docs/$BRANCH_NAME --base-href /templates-lms/templates/$BRANCH_NAME/
+          BRANCH_NAME=${{ github.ref_name }}
+          echo "🚧 Building template for branch: $BRANCH_NAME"
+          npm run build-template -- $BRANCH_NAME
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
