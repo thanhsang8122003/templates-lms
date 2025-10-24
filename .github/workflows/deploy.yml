@@ -3,7 +3,7 @@ name: Deploy Angular Template to GitHub Pages
 on:
   push:
     branches:
-      - template1
+      - sang-lms
       - template2
       - template3
 
