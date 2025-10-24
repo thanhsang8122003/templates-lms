@@ -1,0 +1,36 @@
+name: Deploy Angular Template to GitHub Pages
+
+on:
+  push:
+    branches:
+      - template1
+      - template2
+      - template3
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Angular app
+        run: |
+          BRANCH_NAME=${GITHUB_REF##*/}
+          echo "Building for branch: $BRANCH_NAME"
+          npm run build -- --output-path=docs/$BRANCH_NAME --base-href /templates-lms/templates/$BRANCH_NAME/
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
